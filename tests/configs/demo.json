@@ -1,0 +1,17 @@
+{
+    "name": "social pulse demo",
+    "base_folder": "dashboard/data",
+    "enabled": [
+        ["douban", "book_movie_music"]
+    ],
+    "social": {
+        "douban": {
+            "book_movie_music": {
+                "user_id": "emptymalei",
+                "artifacts": {
+                    "local": "douban__book_movie_music.json"
+                }
+            }
+        }
+    }
+}
