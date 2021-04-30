@@ -4,12 +4,25 @@
     "enabled": [
         ["douban", "book_movie_music"]
     ],
+    "combined": {
+        "artifacts": {
+            "local": "pulses.json"
+        }
+    },
     "social": {
         "douban": {
             "book_movie_music": {
                 "user_id": "emptymalei",
                 "artifacts": {
                     "local": "douban/douban__book_movie_music.json"
+                }
+            }
+        },
+        "github": {
+            "events": {
+                "user_id": "emptymalei",
+                "artifacts": {
+                    "local": "github/github__events.json"
                 }
             }
         }
