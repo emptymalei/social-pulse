@@ -90,8 +90,8 @@ class Pulse:
 
     def __init__(self, config, base_folder=None):
         self.name = "Pulse is a data holder and processor"
-        if isinstance(config, str):
-            config = Config()
+        if isinstance(config, (str, dict)):
+            config = Config(config)
         self.config = config
         self.base_folder = base_folder
         self.local = self.config[["artifacts", "local"]]
@@ -144,6 +144,42 @@ class Pulse:
 
         self.merge_pulses(self.get_existing_pulses(), self.get_new_pulses())
         self.save()
+
+
+class CombinedPulse:
+    def __init__(self, pulses, config, base_folder=None):
+        if not isinstance(pulses, (list, tuple)):
+            raise ValueError(f"Input should be a list of pulses")
+
+        self._combine(pulses)
+
+        self.name = "Combined Pulses"
+        if isinstance(config, (str, dict)):
+            config = Config(config)
+        self.config = config
+        self.base_folder = base_folder
+
+        self.local = self.config[["artifacts", "local"]]
+        if self.base_folder:
+            self.local = os.path.join(self.base_folder, self.local)
+
+    def _combine(self, pulses):
+        self.pulses = {}
+        for p in pulses:
+            self.pulses.update(p)
+
+    def save(self):
+        """
+        save dumps the pulses into a file
+        """
+
+        logger.debug(f"Saving pulses to {self.local}...")
+        logger.debug(f"checking if folder exists...")
+        if not os.path.exists(os.path.dirname(self.local)):
+            os.makedirs(os.path.dirname(self.local))
+
+        with open(self.local, "w") as fp:
+            json.dump(self.pulses, fp, indent=2)
 
 
 if __name__ == "__main__":

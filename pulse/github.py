@@ -21,9 +21,7 @@ class GitHub(Pulse):
 
         events_uri = f"https://api.github.com/users/{id}/events"
 
-        feed_data = requests.get(url=events_uri).json()
-
-        events = feed_data.get("entries")
+        events = requests.get(url=events_uri).json()
 
         return events
 
@@ -34,7 +32,7 @@ class GitHub(Pulse):
         """
         records = {}
         for d in data:
-            d_dt = parser.parse(d["published"]).date().isoformat()
+            d_dt = parser.parse(d["created_at"]).date().isoformat()
             if d_dt not in records:
                 records[d_dt] = 1
 

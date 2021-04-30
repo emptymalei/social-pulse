@@ -4,6 +4,11 @@
     "enabled": [
         ["douban", "book_movie_music"]
     ],
+    "combined": {
+        "artifacts": {
+            "local": "pulses.json"
+        }
+    },
     "social": {
         "douban": {
             "book_movie_music": {
