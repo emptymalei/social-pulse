@@ -1,0 +1,219 @@
+<!--
+=========================================================
+* Soft UI Dashboard - v1.0.1
+=========================================================
+
+* Product Page: https://www.creative-tim.com/product/soft-ui-dashboard
+* Copyright 2021 Creative Tim (https://www.creative-tim.com)
+* Licensed under MIT (https://github.com/creativetimofficial/soft-ui-dashboard/blob/master/LICENSE.md)
+
+* Coded by Creative Tim
+
+=========================================================
+
+* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
+  <link rel="icon" type="image/png" href="../assets/img/favicon.png">
+  <title>
+    My Social Pulse
+  </title>
+  <!--     Fonts and icons     -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
+  <!-- Nucleo Icons -->
+  <link href="../assets/css/nucleo-icons.css" rel="stylesheet" />
+  <link href="../assets/css/nucleo-svg.css" rel="stylesheet" />
+  <!-- Font Awesome Icons -->
+  <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
+  <link href="../assets/css/nucleo-svg.css" rel="stylesheet" />
+  <!-- CSS Files -->
+  <link id="pagestyle" href="../assets/css/soft-ui-dashboard.css?v=1.0.1" rel="stylesheet" />
+</head>
+
+<body class="g-sidenav-show  bg-gray-100">
+
+  <main class="main-content mt-1 border-radius-lg">
+    <!-- Navbar -->
+    <nav class="navbar navbar-main navbar-expand-lg px-0 mx-4 shadow-none border-radius-xl" id="navbarBlur" navbar-scroll="true">
+      <div class="container-fluid py-1 px-3">
+        <nav aria-label="breadcrumb">
+          <h6 class="font-weight-bolder mb-0">My Social Pulse</h6>
+        </nav>
+        <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
+          <div class="ms-md-auto pe-md-3 d-flex align-items-center">
+
+          </div>
+          <ul class="navbar-nav  justify-content-end">
+            <li class="nav-item d-flex align-items-center">
+              <a href="https://github.com/emptymalei/social-pulse" class="nav-link text-body font-weight-bold px-0">
+                <i class="fa fa-github me-sm-1"></i>
+                <span class="d-sm-inline d-none"></span>
+              </a>
+            </li>
+
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- End Navbar -->
+    <div class="container-fluid py-4">
+
+      <div class="row mt-4">
+        <div class="col-lg-12 mb-lg-0 mb-4">
+          <div class="card">
+            <div class="card-body p-3">
+              <div class="row">
+                <div class="col-lg-6">
+                  <div class="d-flex flex-column h-100">
+                    <p class="mb-1 pt-2 text-bold">About</p>
+                    <h5 class="font-weight-bolder">Social Pulse</h5>
+                    <p class="mb-5">Am I still alive? Life is not only measured by biological metrics. It is also measured by our online activities.
+                      This dashboard shows my online activities. If I am ever online, a bar will show up in the chart. If this dashboard is showing null activities, it probably means I am dead, at least online.
+                    </p><p class="mb-5">
+                      In the background, we have GitHub Actions running regularly on GitHub and update the social activities. The updated data is then fed into this dashboard. </p>
+                    <a class="text-body text-sm font-weight-bold mb-0 icon-move-right mt-auto" href="javascript:;">
+
+                      <i class="fas fa-arrow-right text-sm ms-1" aria-hidden="true"></i>
+                    </a>
+                  </div>
+                </div>
+                <div class="col-lg-5 ms-auto text-center mt-5 mt-lg-0">
+                  <div class="border-radius-lg h-100">
+
+                    <div class="position-relative d-flex align-items-center justify-content-center h-100">
+                      <img class="w-50 position-relative z-index-2 pt-4" src="assets/img/illustrations/undraw_Playful_cat_rchv.svg">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div id='myDiv'></div>
+      <div class="row mt-4">
+        <div class="col-lg-12 mb-lg-0 mb-4">
+          <div class="card">
+            <div class="card-body p-3">
+              <div class="bg-gradient-white border-radius-lg py-3 pe-1 mb-3">
+                <div class="chart">
+                  <div id="pulse-bars" class="chart-canvas" height="170px"></div>
+                </div>
+              </div>
+              <!-- <h6 class="ms-2 mt-4 mb-0"> My Social Pulse </h6> -->
+              <p class="text-sm ms-2"></p>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <footer class="footer pt-3">
+        <div class="container-fluid">
+          <div class="row align-items-center justify-content-lg-between">
+            <div class="col-lg-6 mb-lg-0 mb-4">
+              <div class="copyright text-center text-sm text-muted text-lg-left">
+                © <script>
+                  document.write(new Date().getFullYear())
+                </script>,
+                by <a href="https://leima.is">LM</a> with <i class="fa fa-heart"></i>;
+                UI Template from
+                <a href="https://www.creative-tim.com/product/soft-ui-dashboard" class="font-weight-bold" target="_blank">Creative Tim</a>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <ul class="nav nav-footer justify-content-center justify-content-lg-end">
+                <li class="nav-item">
+                  <a href="https://github.com/emptymalei/social-pulse" class="nav-link pe-0 text-muted" target="_blank">Source</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </main>
+
+  <!--   Core JS Files   -->
+  <script src="../assets/js/core/popper.min.js"></script>
+  <script src="../assets/js/core/bootstrap.min.js"></script>
+  <script src="../assets/js/plugins/smooth-scrollbar.min.js"></script>
+  <!-- Control Center for Soft Dashboard: parallax effects, scripts for the example pages etc -->
+  <script src="../assets/js/soft-ui-dashboard.min.js?v=1.0.1"></script>
+  <script type="text/javascript" src="http://momentjs.com/downloads/moment-with-locales.js"></script>
+
+
+  <head>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  </head>
+  <script>
+
+var today_date = moment().add(1, "days").format('YYYY-MM-DD');
+var begin_date = moment().subtract(30, "days").format("YYYY-MM-DD");
+console.log(begin_date)
+console.log(today_date)
+
+
+var jsonUrl = "data/pulses.json"
+
+Plotly.d3.json(jsonUrl, function(err, raw) {
+  // assuming json is formatted as { "data": [/* */], "layout": {/* */} }
+
+  console.log(raw)
+  x = Object.keys(raw)
+  console.log(x)
+  y = Object.values(raw)
+  console.log(y)
+
+  var data = [
+    {
+      x: x,
+      y: y,
+      type: 'bar',
+      marker: {
+        color: 'rgb(0,0,0,0.125)',
+        opacity: 0.7,
+      }
+    }
+  ];
+  var layout = {
+    title: 'My Social Pulse',
+    xaxis: {
+      range: [begin_date, today_date],
+      type: 'date'
+    },
+    yaxis: {
+      'visible': false,
+    }
+  };
+
+  Plotly.plot('pulse-bars', data, layout);
+});
+
+
+
+
+
+  </script>
+  <script>
+    var win = navigator.platform.indexOf('Win') > -1;
+    if (win && document.querySelector('#sidenav-scrollbar')) {
+      var options = {
+        damping: '0.5'
+      }
+      Scrollbar.init(document.querySelector('#sidenav-scrollbar'), options);
+    }
+  </script>
+  <!-- Github buttons -->
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+</body>
+
+</html>
