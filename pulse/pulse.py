@@ -1,4 +1,5 @@
 import json
+from logging import debug, log
 import os
 
 from loguru import logger
@@ -26,13 +27,21 @@ class Config:
             raise Exception(
                 f"Specify either a path to config file or a dictionary as the config"
             )
+        logger.debug(f"Intialized to {self.config}")
 
     def _load(self, path):
+
         if os.path.isfile(path):
+            logger.debug(f"Loading content from {path}")
             with open(path) as fp:
-                self.config = json.load(fp)
+                config = json.load(fp)
+            logger.debug(f"Loaded content as config ({type(config)}):\n{config}")
+            if config is None:
+                raise Exception(f"Could not load content from {path}")
         else:
             raise ValueError(f"Config file doesn't exist: {path}")
+
+        return config
 
     def get(self, path):
         """
@@ -50,14 +59,20 @@ class Config:
             path = [path]
 
         # Find the values
+        logger.debug(f"{self.config}")
         res = self.config.copy()
         for p in path:
             res = res[p]
+        if isinstance(res, dict):
+            res = Config(res)
 
         return res
 
     def __getitem__(self, item):
         return self.get(item)
+
+    def __str__(self) -> str:
+        return f"{self.config}"
 
 
 class Pulse:
@@ -116,6 +131,11 @@ class Pulse:
         """
         save dumps the pulses into a file
         """
+
+        logger.debug(f"Saving pulses to {self.local}...")
+        logger.debug(f"checking if folder exists...")
+        if not os.path.exists(os.path.dirname(self.local)):
+            os.makedirs(os.path.dirname(self.local))
 
         with open(self.local, "w") as fp:
             json.dump(self.pulses, fp, indent=2)

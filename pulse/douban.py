@@ -48,6 +48,7 @@ class Douban(Pulse):
 
 
 if __name__ == "__main__":
+
     from pulse import Config
 
     conf = Config(

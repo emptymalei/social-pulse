@@ -1,0 +1,34 @@
+name: Update Data
+
+on:
+  push:
+    branches:
+      - '**'
+      - '!gh-pages'
+  schedule:
+    - cron:  '0 12 * * *'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.7
+
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+
+      - name: Update Data
+        run: |
+          python pulse/app.py -c configs/config.json
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dashboard
