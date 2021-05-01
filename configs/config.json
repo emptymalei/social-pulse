@@ -16,6 +16,12 @@
                 "artifacts": {
                     "local": "douban/douban__book_movie_music.json"
                 }
+            },
+            "status": {
+                "user_id": "1587390",
+                "artifacts": {
+                    "local": "douban/douban__status.json"
+                }
             }
         },
         "github": {
