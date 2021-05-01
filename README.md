@@ -1,6 +1,9 @@
 # social-pulse
 
-My social pulse using GitHub Actions automation.
+Automated collection of social activities using GitHub Actions.
+
+[Demo](https://pulse.leima.is/)
+![](assets/demo.png)
 
 ## How it works?
 
@@ -21,7 +24,7 @@ Fork the repo, and change the configs.
 
 The config file is located in `configs/config.json`.
 
-Change all the `user_id` fields in the config.
+Change all the `user_id` fields in the config. See the `//` comments in the following example.
 
 ```
 {
