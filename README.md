@@ -18,13 +18,14 @@ Fork the repo, and change the configs.
 
 1. Fork the repo. Make sure to allow GitHub Actions when forking.
 2. Remove the data files in `dashboard/data`.
-3. Change the configs.
+3. Change the `CNAME` file to adjust to your own domain name if needed. Otherwise, delete the file.
+3. Change the configs (see below).
 
 ### Change the Configs
 
 The config file is located in `configs/config.json`.
 
-Change all the `user_id` fields in the config. See the `//` comments in the following example.
+Change all the `user_id` fields in the config. Check the details of the `//` comments in the following example.
 
 ```
 {
@@ -41,13 +42,13 @@ Change all the `user_id` fields in the config. See the `//` comments in the foll
     "social": {
         "douban": {
             "book_movie_music": {
-                "user_id": "emptymalei",   // Replace with your own douban id
+                "user_id": "emptymalei",   // Replace it with your own douban id
                 "artifacts": {
                     "local": "douban/douban__book_movie_music.json"
                 }
             },
             "status": {
-                "user_id": "1587390",      // Replace with your own douban id, only numerical id is supported: https://docs.rsshub.app/social-media.html#dou-ban
+                "user_id": "1587390",      // Replace it with your own douban id, only numerical id is supported: https://docs.rsshub.app/social-media.html#dou-ban
                 "artifacts": {
                     "local": "douban/douban__status.json"
                 }
@@ -55,7 +56,7 @@ Change all the `user_id` fields in the config. See the `//` comments in the foll
         },
         "github": {
             "events": {
-                "user_id": "emptymalei",    // Replace this with your GitHub id.
+                "user_id": "emptymalei",    // Replace it with your GitHub id.
                 "artifacts": {
                     "local": "github/github__events.json"
                 }
