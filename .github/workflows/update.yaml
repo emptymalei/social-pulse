@@ -6,7 +6,13 @@ on:
       - '**'
       - '!gh-pages'
   schedule:
-    - cron:  '0 12 * * *'
+    - cron:  '0 9/12 * * *'
+  workflow_dispatch:
+    inputs:
+      whotriggered:
+        description: 'Manual Trigger'
+        default: 'Trigger manually'
+        required: false
 
 jobs:
   deploy:

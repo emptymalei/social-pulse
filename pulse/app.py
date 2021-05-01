@@ -1,6 +1,6 @@
 import click
 from pulse import Config
-from douban import Douban
+from douban import DoubanInterest, DoubanStatus
 from github import GitHub
 from loguru import logger
 from pulse import CombinedPulse
@@ -14,11 +14,18 @@ def pulse(config):
     logger.debug(f"The full config: {conf}")
 
     # Douban
-    logger.debug(f'Douban config: {conf[["social", "douban", "book_movie_music"]]}')
-    douban = Douban(
+    logger.debug(f'Douban interest config: {conf[["social", "douban", "book_movie_music"]]}')
+    douban_interests = DoubanInterest(
         conf[["social", "douban", "book_movie_music"]], base_folder="dashboard/data"
     )
-    douban.run()
+    douban_interests.run()
+
+    logger.debug(f'Douban status config: {conf[["social", "douban", "status"]]}')
+    douban_status = DoubanInterest(
+        conf[["social", "douban", "status"]], base_folder="dashboard/data"
+    )
+    douban_status.run()
+
 
     # GitHub
     logger.debug(f'GitHub config: {conf[["social", "github", "events"]]}')
@@ -27,7 +34,7 @@ def pulse(config):
 
     # Combine
     combined_publse = CombinedPulse(
-        [douban.pulses, github.pulses], conf[["combined"]], base_folder="dashboard/data"
+        [douban_interests.pulses, github.pulses], conf[["combined"]], base_folder="dashboard/data"
     )
     combined_publse.save()
 
