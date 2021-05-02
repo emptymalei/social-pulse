@@ -32,6 +32,14 @@ jobs:
       - name: Update Data
         run: |
           python pulse/app.py -c configs/config.json
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git pull
+          git status
+          git add .
+          git commit -m "Update Social Pulse Data" || echo "Nothing to update"
+          git pull
+          git status
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
