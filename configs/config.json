@@ -9,6 +9,16 @@
             "local": "pulses.json"
         }
     },
+    "combined-social-media": {
+        "artifacts": {
+            "local": "social_media.json"
+        }
+    },
+    "combined-tech": {
+        "artifacts": {
+            "local": "tech.json"
+        }
+    },
     "social": {
         "douban": {
             "book_movie_music": {

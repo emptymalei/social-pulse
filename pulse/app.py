@@ -38,6 +38,16 @@ def pulse(config):
     )
     combined_publse.save()
 
+    sm_combined_publse = CombinedPulse(
+        [douban_interests.pulses, douban_status.pulses], conf[["combined-social-media"]], base_folder="dashboard/data"
+    )
+    sm_combined_publse.save()
+
+    tech_combined_publse = CombinedPulse(
+        [github.pulses], conf[["combined-tech"]], base_folder="dashboard/data"
+    )
+    tech_combined_publse.save()
+
 
 if __name__ == "__main__":
     pulse()

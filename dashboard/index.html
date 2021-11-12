@@ -106,6 +106,9 @@
                 <div class="chart">
                   <div id="pulse-bars" class="chart-canvas" height="170px"></div>
                 </div>
+                <div class="chart">
+                  <div id="sm-pulse-bars" class="chart-canvas" height="170px"></div>
+                </div>
               </div>
               <!-- <h6 class="ms-2 mt-4 mb-0"> My Social Pulse </h6> -->
               <p class="text-sm ms-2"></p>
@@ -199,6 +202,42 @@ Plotly.d3.json(jsonUrl, function(err, raw) {
 });
 
 
+
+var sm_jsonUrl = "data/social_media.json"
+
+Plotly.d3.json(sm_jsonUrl, function(err, raw) {
+  // assuming json is formatted as { "data": [/* */], "layout": {/* */} }
+
+  console.log(raw)
+  x = Object.keys(raw)
+  console.log(x)
+  y = Object.values(raw)
+  console.log(y)
+
+  var data = [
+    {
+      x: x,
+      y: y,
+      type: 'bar',
+      marker: {
+        color: 'rgb(0,0,0,0.125)',
+        opacity: 0.7,
+      }
+    }
+  ];
+  var layout = {
+    title: 'My Social Pulse',
+    xaxis: {
+      range: [begin_date, today_date],
+      type: 'date'
+    },
+    yaxis: {
+      'visible': false,
+    }
+  };
+
+  Plotly.plot('sm-pulse-bars', data, layout, {displayModeBar: false});
+});
 
 
 
