@@ -109,6 +109,9 @@
                 <div class="chart">
                   <div id="sm-pulse-bars" class="chart-canvas" height="170px"></div>
                 </div>
+                <div class="chart">
+                  <div id="tech-pulse-bars" class="chart-canvas" height="170px"></div>
+                </div>
               </div>
               <!-- <h6 class="ms-2 mt-4 mb-0"> My Social Pulse </h6> -->
               <p class="text-sm ms-2"></p>
@@ -188,7 +191,7 @@ Plotly.d3.json(jsonUrl, function(err, raw) {
     }
   ];
   var layout = {
-    title: 'My Social Pulse',
+    title: 'My Social Pulse (All)',
     xaxis: {
       range: [begin_date, today_date],
       type: 'date'
@@ -226,7 +229,7 @@ Plotly.d3.json(sm_jsonUrl, function(err, raw) {
     }
   ];
   var layout = {
-    title: 'My Social Pulse',
+    title: 'My Social Pulse (Social Media)',
     xaxis: {
       range: [begin_date, today_date],
       type: 'date'
@@ -237,6 +240,43 @@ Plotly.d3.json(sm_jsonUrl, function(err, raw) {
   };
 
   Plotly.plot('sm-pulse-bars', data, layout, {displayModeBar: false});
+});
+
+
+var tech_jsonUrl = "data/tech.json"
+
+Plotly.d3.json(tech_jsonUrl, function(err, raw) {
+  // assuming json is formatted as { "data": [/* */], "layout": {/* */} }
+
+  console.log(raw)
+  x = Object.keys(raw)
+  console.log(x)
+  y = Object.values(raw)
+  console.log(y)
+
+  var data = [
+    {
+      x: x,
+      y: y,
+      type: 'bar',
+      marker: {
+        color: 'rgb(0,0,0,0.125)',
+        opacity: 0.7,
+      }
+    }
+  ];
+  var layout = {
+    title: 'My Social Pulse (Tech)',
+    xaxis: {
+      range: [begin_date, today_date],
+      type: 'date'
+    },
+    yaxis: {
+      'visible': false,
+    }
+  };
+
+  Plotly.plot('tech-pulse-bars', data, layout, {displayModeBar: false});
 });
 
 
