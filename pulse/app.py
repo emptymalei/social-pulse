@@ -21,7 +21,7 @@ def pulse(config):
     douban_interests.run()
 
     logger.debug(f'Douban status config: {conf[["social", "douban", "status"]]}')
-    douban_status = DoubanInterest(
+    douban_status = DoubanStatus(
         conf[["social", "douban", "status"]], base_folder="dashboard/data"
     )
     douban_status.run()
