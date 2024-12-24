@@ -174,7 +174,7 @@ class CombinedPulse:
         """
 
         logger.debug(f"Saving pulses to {self.local}...")
-        logger.debug(f"checking if folder exists...")
+        logger.debug("checking if folder exists...")
         if not os.path.exists(os.path.dirname(self.local)):
             os.makedirs(os.path.dirname(self.local))
 

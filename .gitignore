@@ -252,7 +252,8 @@ dist
 .LSOverride
 
 # Icon must end with two \r
-Icon
+Icon
+
 
 # Thumbnails
 ._*
@@ -272,3 +273,12 @@ Icon
 Network Trash Folder
 Temporary Items
 .apdisk
+
+
+.DS_Store
+/dist/
+node_modules/
+yarn-error.log
+/framework/dist/
+/framework/node_modules/
+src/.observablehq/cache/
