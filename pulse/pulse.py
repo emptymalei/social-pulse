@@ -142,7 +142,7 @@ class Pulse:
 
         logger.debug(f"Saving csv to {self.local}...")
         df = pd.DataFrame(list(self.pulses.items()), columns=['Date', 'Value'])
-        df.to_csv(self.local.replace(".json", ".csv"))
+        df.to_csv(self.local.replace(".json", ".csv"), index=False)
 
     def run(self):
 
@@ -187,7 +187,7 @@ class CombinedPulse:
 
         logger.debug(f"Saving csv to {self.local}...")
         df = pd.DataFrame(list(self.pulses.items()), columns=['Date', 'Value'])
-        df.to_csv(self.local.replace(".json", ".csv"))
+        df.to_csv(self.local.replace(".json", ".csv"), index=False)
 
 
 if __name__ == "__main__":
