@@ -18,6 +18,7 @@ on:
 permissions:
   pages: write
   id-token: write
+  contents: write
 
 jobs:
   deploy:
