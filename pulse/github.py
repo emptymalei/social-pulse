@@ -182,7 +182,8 @@ class GitHubStats(Pulse):
             self.existing_pulses = []
         else:
             json_files = [
-                p for p in os.listdir(self.json_folder)
+                os.path.join(self.json_folder, p)
+                for p in os.listdir(self.json_folder)
                 if p.endswith('.json')
             ]
             logger.debug(f"Found {len(json_files)} json files ...")
