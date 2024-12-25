@@ -1,7 +1,7 @@
 import json
 from logging import debug, log
 import os
-
+import pandas as pd
 from loguru import logger
 
 
@@ -133,12 +133,16 @@ class Pulse:
         """
 
         logger.debug(f"Saving pulses to {self.local}...")
-        logger.debug(f"checking if folder exists...")
+        logger.debug("checking if folder exists...")
         if not os.path.exists(os.path.dirname(self.local)):
             os.makedirs(os.path.dirname(self.local))
 
         with open(self.local, "w") as fp:
             json.dump(self.pulses, fp, indent=2)
+
+        logger.debug(f"Saving csv to {self.local}...")
+        df = pd.DataFrame(list(self.pulses.items()), columns=['Date', 'Value'])
+        df.to_csv(self.local.replace(".json", ".csv"), index=False)
 
     def run(self):
 
@@ -149,7 +153,7 @@ class Pulse:
 class CombinedPulse:
     def __init__(self, pulses, config, base_folder=None):
         if not isinstance(pulses, (list, tuple)):
-            raise ValueError(f"Input should be a list of pulses")
+            raise ValueError("Input should be a list of pulses")
 
         self._combine(pulses)
 
@@ -180,6 +184,10 @@ class CombinedPulse:
 
         with open(self.local, "w") as fp:
             json.dump(self.pulses, fp, indent=2)
+
+        logger.debug(f"Saving csv to {self.local}...")
+        df = pd.DataFrame(list(self.pulses.items()), columns=['Date', 'Value'])
+        df.to_csv(self.local.replace(".json", ".csv"), index=False)
 
 
 if __name__ == "__main__":

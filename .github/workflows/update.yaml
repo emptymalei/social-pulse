@@ -3,7 +3,8 @@ name: Update Data
 on:
   push:
     branches:
-      - '**'
+      - 'main'
+      # - '**'
       - '!gh-pages'
   schedule:
     - cron:  '0 9/12 * * *'
@@ -14,16 +15,22 @@ on:
         default: 'Trigger manually'
         required: false
 
+
+permissions:
+  pages: write
+  id-token: write
+  contents: write
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
 
       - name: Set up Python
-        uses: actions/setup-python@v2
+        uses: actions/setup-python@v5
         with:
-          python-version: 3.7
+          python-version: 3.11
 
       - name: Install dependencies
         run: |
@@ -42,9 +49,38 @@ jobs:
           git pull
           git status
           git push
+      - name: Move Data
+        run: |
+          cp dashboard/data/*.csv sources/pulses/
 
+      - name: Install Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: build
+        env:
+          # BASE_PATH: '/${{ github.event.repository.name }}'
+          BASE_PATH: '/'
+          ## Add and uncomment any environment variables here
+          ## EVIDENCE_SOURCE__my_source__username: ${{ secrets.EVIDENCE_SOURCE__MY_SOURCE__USERNAME }}
+          ## EVIDENCE_SOURCE__my_source__private_key: ${{ secrets.EVIDENCE_SOURCE__MY_SOURCE__PRIVATE_KEY }}
+        run: |
+          npm run sources
+          npm run build
+      - name: CNAME
+        run: |
+          echo 'pulse.leima.is' > build/CNAME
+      - name: Upload Artifacts
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: 'build/'
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dashboard
+          publish_dir: ./build
