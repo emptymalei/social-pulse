@@ -19,27 +19,27 @@
 		
 		<link href="/_app/immutable/assets/0.Co0CgSEG.css" rel="stylesheet">
 		<link href="/_app/immutable/assets/VennDiagram.DBCXi1Yl.css" rel="stylesheet">
-		<link rel="modulepreload" href="/_app/immutable/entry/start.Dgnf_yR8.js">
-		<link rel="modulepreload" href="/_app/immutable/chunks/entry.DkWnf8Ea.js">
+		<link rel="modulepreload" href="/_app/immutable/entry/start.CGyQP68o.js">
+		<link rel="modulepreload" href="/_app/immutable/chunks/entry.DwJVGleB.js">
 		<link rel="modulepreload" href="/_app/immutable/chunks/scheduler.DGdCZZk7.js">
-		<link rel="modulepreload" href="/_app/immutable/entry/app.DSa2FoBk.js">
+		<link rel="modulepreload" href="/_app/immutable/entry/app.Bz4fvP4R.js">
 		<link rel="modulepreload" href="/_app/immutable/chunks/preload-helper.D7HrI6pR.js">
 		<link rel="modulepreload" href="/_app/immutable/chunks/index.BbibI47o.js">
-		<link rel="modulepreload" href="/_app/immutable/nodes/0.eXEeyra4.js">
-		<link rel="modulepreload" href="/_app/immutable/chunks/inferColumnTypes.83fZTUZ5.js">
+		<link rel="modulepreload" href="/_app/immutable/nodes/0.DyxBUUPx.js">
+		<link rel="modulepreload" href="/_app/immutable/chunks/inferColumnTypes.CrQnocnR.js">
 		<link rel="modulepreload" href="/_app/immutable/chunks/index.rV6zwFgL.js">
 		<link rel="modulepreload" href="/_app/immutable/chunks/profile.BW8tN6E9.js">
 		<link rel="modulepreload" href="/_app/immutable/chunks/setTrackProxy.Cyfckp0w.js">
-		<link rel="modulepreload" href="/_app/immutable/chunks/VennDiagram.svelte_svelte_type_style_lang.BTQ76Rr1.js">
-		<link rel="modulepreload" href="/_app/immutable/chunks/stores.8uFa3kRJ.js">
+		<link rel="modulepreload" href="/_app/immutable/chunks/VennDiagram.svelte_svelte_type_style_lang.s1RRw6qz.js">
+		<link rel="modulepreload" href="/_app/immutable/chunks/stores.CtAOapm9.js">
 		<link rel="modulepreload" href="/_app/immutable/chunks/index.CqVitEmB.js">
-		<link rel="modulepreload" href="/_app/immutable/chunks/updater.45vtKJIn.js">
-		<link rel="modulepreload" href="/_app/immutable/chunks/button.D7aYsMul.js">
-		<link rel="modulepreload" href="/_app/immutable/chunks/AccordionItem.BPBizGsm.js">
-		<link rel="modulepreload" href="/_app/immutable/nodes/7.Clxrz3Dr.js">
-		<link rel="modulepreload" href="/_app/immutable/chunks/Value.BDDEz1Lj.js">
-		<link rel="modulepreload" href="/_app/immutable/chunks/ECharts.B6LiyvbH.js">
-		<link rel="modulepreload" href="/_app/immutable/chunks/Prismjs.AcglrVhi.js"><title>Open Source</title><!-- HEAD_svelte-6lktun_START --> <meta property="og:title" content="Open Source"> <meta name="twitter:title" content="Open Source"><meta name="twitter:card" content="summary"><meta name="twitter:site" content="@evidence_dev"> <!-- HEAD_svelte-6lktun_END -->
+		<link rel="modulepreload" href="/_app/immutable/chunks/updater.DullfPqm.js">
+		<link rel="modulepreload" href="/_app/immutable/chunks/button.BpLxCLu4.js">
+		<link rel="modulepreload" href="/_app/immutable/chunks/AccordionItem.CifdJmhM.js">
+		<link rel="modulepreload" href="/_app/immutable/nodes/7.D4oKa2uv.js">
+		<link rel="modulepreload" href="/_app/immutable/chunks/Value.DaqXPbRq.js">
+		<link rel="modulepreload" href="/_app/immutable/chunks/ECharts.DWlpBOwx.js">
+		<link rel="modulepreload" href="/_app/immutable/chunks/Prismjs.B5ucR-h0.js"><title>Open Source</title><!-- HEAD_svelte-6lktun_START --> <meta property="og:title" content="Open Source"> <meta name="twitter:title" content="Open Source"><meta name="twitter:card" content="summary"><meta name="twitter:site" content="@evidence_dev"> <!-- HEAD_svelte-6lktun_END -->
 	</head>
 	<body>
 		<script>
@@ -53,7 +53,7 @@
 			<script type="application/json" data-sveltekit-fetched data-url="/api//opensource/evidencemeta.json">{"status":200,"statusText":"","headers":{},"body":"{\"queries\":[{\"id\":\"github_stats\",\"compiledQueryString\":\"select date, domain, sum(stargazers_count) as stargazers_count,\\nsum(watchers_count) as watchers_count\\nfrom opensource.github__stats\\ngroup by date, domain\",\"inputQueryString\":\"select date, domain, sum(stargazers_count) as stargazers_count,\\nsum(watchers_count) as watchers_count\\nfrom opensource.github__stats\\ngroup by date, domain\",\"compiled\":false,\"inline\":true},{\"id\":\"github_top_by_date\",\"compiledQueryString\":\"select full_name, sum(stargazers_count) as stargazers_count,\\nsum(watchers_count) as watchers_count\\nfrom opensource.github__stats\\nWHERE date = (select max(date) from opensource.github__stats)\\ngroup by date, full_name\\nORDER BY\\n    stargazers_count DESC\\nLIMIT 10\",\"inputQueryString\":\"select full_name, sum(stargazers_count) as stargazers_count,\\nsum(watchers_count) as watchers_count\\nfrom opensource.github__stats\\nWHERE date = (select max(date) from opensource.github__stats)\\ngroup by date, full_name\\nORDER BY\\n    stargazers_count DESC\\nLIMIT 10\",\"compiled\":false,\"inline\":true}]}"}</script>
 			<script>
 				{
-					__sveltekit_mvy2yg = {
+					__sveltekit_mzoz7b = {
 						base: ""
 					};
 
@@ -62,8 +62,8 @@
 					const data = [null,null];
 
 					Promise.all([
-						import("/_app/immutable/entry/start.Dgnf_yR8.js"),
-						import("/_app/immutable/entry/app.DSa2FoBk.js")
+						import("/_app/immutable/entry/start.CGyQP68o.js"),
+						import("/_app/immutable/entry/app.Bz4fvP4R.js")
 					]).then(([kit, app]) => {
 						kit.start(app, element, {
 							node_ids: [0, 7],
