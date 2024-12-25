@@ -1,1 +1,1 @@
-{"queries":[{"id":"pulses","compiledQueryString":"select * from pulses.pulses","inputQueryString":"select * from pulses.pulses","compiled":false,"inline":true},{"id":"pulses_social","compiledQueryString":"select * from pulses.social_media","inputQueryString":"select * from pulses.social_media","compiled":false,"inline":true},{"id":"pulses_tech","compiledQueryString":"select * from pulses.tech","inputQueryString":"select * from pulses.tech","compiled":false,"inline":true}]}
+{"queries":[]}
