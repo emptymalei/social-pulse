@@ -8,9 +8,9 @@ Am I still alive? Life is not only measured by biological metrics. It is also me
 
 In the background, we have GitHub Actions running regularly on GitHub and update the social activities. The updated data is then fed into this dashboard.
 
-## Everything Combined
+## Was I Online?
 
-
+The follow calendar heatmap indicates all my online activities. Color indicates that I was online on that day. Missing values means I was most likely offline.
 
 ```sql pulses_all
 select * from pulses.pulses

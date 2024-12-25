@@ -20,6 +20,7 @@ Last update: <Value data={github_stats} column="date" agg="max" />.
     x=date
     y=stargazers_count
     series=domain
+    title="Stargazers"
 />
 
 

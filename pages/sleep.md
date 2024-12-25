@@ -12,6 +12,7 @@ select * from health.sleep_daily_data
 Last update: <Value data={sleep} column="date" agg="max" />.
 </Alert>
 
+The follow charts shows my daily sleeping hours.
 
 <CalendarHeatmap
     data={sleep}
