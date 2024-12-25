@@ -52,6 +52,12 @@ jobs:
       - name: Move Data
         run: |
           sh move_data.sh
+          git add .
+          git commit -m "Update evidence data sources" || echo "Nothing to update"
+          git config pull.rebase true
+          git pull
+          git status
+          git push
       - name: Install Node.js
         uses: actions/setup-node@v4
         with:
