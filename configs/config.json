@@ -44,7 +44,7 @@
             "stats": {
                 "user_id": "emptymalei",
                 "artifacts": {
-                    "local": "github/github__stats.json"
+                    "local": "github/github__stats"
                 }
             }
         }

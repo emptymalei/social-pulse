@@ -95,6 +95,9 @@ class GitHubStats(Pulse):
     def __init__(self, config, base_folder=None):
         super().__init__(config, base_folder)
 
+        self.dt = datetime.datetime.now().date().isoformat()
+        self.json_folder = os.path.join(self.local, "json")
+
     @staticmethod
     def orgs(id: str) -> dict:
 
@@ -151,6 +154,20 @@ class GitHubStats(Pulse):
 
         self.new_pulses = self.get_all_repos()
 
+        logger.debug(f"Saving data to {self.local}...")
+        logger.debug("checking if folder exists...")
+        if not os.path.exists(self.local):
+            os.makedirs(self.local)
+
+
+        if not os.path.exists(self.json_folder):
+            os.makedirs(self.json_folder)
+
+        snapshot_file_path = os.path.join(self.json_folder, f"{self.dt}.json")
+
+        with open(snapshot_file_path, "w") as fp:
+            json.dump(self.new_pulses, fp, indent=2)
+
         return self.new_pulses
 
     def get_existing_pulses(self):
@@ -158,14 +175,21 @@ class GitHubStats(Pulse):
         get_existing_pulses loads the existing pulse records
         """
 
-        if not os.path.isfile(self.local):
+        if not os.path.exists(self.json_folder):
             logger.warning(
-                f"artifacts do not exist:\n{self.local}; will create new file."
+                f"artifacts do not exist:\n{self.json_folder}; will create empty content."
             )
             self.existing_pulses = []
         else:
-            with open(self.local, "r") as fp:
-                self.existing_pulses = json.load(fp)
+            json_files = [
+                p for p in os.listdir(self.json_folder)
+                if p.endswith('.json')
+            ]
+            logger.debug(f"Found {len(json_files)} json files ...")
+            self.existing_pulses = []
+            for i in json_files:
+                with open(i, "r") as fp:
+                    self.existing_pulses += json.load(fp)
 
         return self.existing_pulses
 
@@ -180,7 +204,7 @@ class GitHubStats(Pulse):
 
         user_repos = self.user_repos(self.config["user_id"])
 
-        dt = datetime.datetime.now().date().isoformat()
+        dt = self.dt
 
         logger.debug("User repos ...")
         repos_data = [
@@ -222,19 +246,15 @@ class GitHubStats(Pulse):
         """
         save dumps the pulses into a file
         """
+        full_csv_path = self.local + ".csv"
+        logger.debug(f"Saving csv to {full_csv_path}...")
+        df = pd.DataFrame(self.existing_pulses)
+        df.to_csv(full_csv_path, index=False)
 
-        logger.debug(f"Saving pulses to {self.local}...")
-        logger.debug("checking if folder exists...")
-        if not os.path.exists(os.path.dirname(self.local)):
-            os.makedirs(os.path.dirname(self.local))
-
-        with open(self.local, "w") as fp:
-            json.dump(self.pulses, fp, indent=2)
-
-        logger.debug(f"Saving csv to {self.local}...")
-        df = pd.DataFrame(self.pulses)
-        df.to_csv(self.local.replace(".json", ".csv"), index=False)
-
+    def run(self):
+        self.get_new_pulses()
+        self.get_existing_pulses()
+        self.save()
 
 
 if __name__ == "__main__":
