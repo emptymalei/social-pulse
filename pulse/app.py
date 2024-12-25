@@ -1,7 +1,7 @@
 import click
 from pulse import Config
 from douban import DoubanInterest, DoubanStatus
-from github import GitHub
+from github import GitHub, GitHubStats
 from loguru import logger
 from pulse import CombinedPulse
 
@@ -26,7 +26,6 @@ def pulse(config):
     )
     douban_status.run()
 
-
     # GitHub
     logger.debug(f'GitHub config: {conf[["social", "github", "events"]]}')
     github = GitHub(conf[["social", "github", "events"]], base_folder="dashboard/data")
@@ -47,6 +46,17 @@ def pulse(config):
         [github.pulses], conf[["combined-tech"]], base_folder="dashboard/data"
     )
     tech_combined_publse.save()
+
+    # GitHub Stars
+    logger.info("Getting GitHub stats ...")
+    github_stats = GitHubStats(
+        conf[["social", "github", "stats"]],
+        base_folder="dashboard/data"
+    )
+    try:
+        github_stats.run()
+    except Exception as e:
+        logger.error(f"Error getting GitHub stats: {e}")
 
 
 if __name__ == "__main__":

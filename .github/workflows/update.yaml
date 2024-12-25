@@ -51,8 +51,7 @@ jobs:
           git push
       - name: Move Data
         run: |
-          cp dashboard/data/*.csv sources/pulses/
-
+          sh move_data.sh
       - name: Install Node.js
         uses: actions/setup-node@v4
         with:

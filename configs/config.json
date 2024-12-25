@@ -40,6 +40,12 @@
                 "artifacts": {
                     "local": "github/github__events.json"
                 }
+            },
+            "stats": {
+                "user_id": "emptymalei",
+                "artifacts": {
+                    "local": "github/github__stats.json"
+                }
             }
         }
     }

@@ -1,5 +1,6 @@
 ---
 title: Sleep
+sidebar_position: 20
 ---
 
 
@@ -8,7 +9,7 @@ select * from health.sleep_daily_data
 ```
 
 <Alert status="info">
-Last updated: <Value data={sleep} column="date" agg="max" />.
+Last update: <Value data={sleep} column="date" agg="max" />.
 </Alert>
 
 
