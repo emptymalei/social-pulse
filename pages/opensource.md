@@ -23,18 +23,10 @@ Last update: <Value data={github_stats} column="date" agg="max" />.
 />
 
 
-<AreaChart
-    data={github_stats}
-    x=date
-    y=watchers_count
-    series=domain
-/>
-
 
 
 ```sql github_top_by_date
-select full_name, sum(stargazers_count) as stargazers_count,
-sum(watchers_count) as watchers_count
+select full_name, sum(stargazers_count) as stargazers_count
 from opensource.github__stats
 WHERE date = (select max(date) from opensource.github__stats)
 group by date, full_name
