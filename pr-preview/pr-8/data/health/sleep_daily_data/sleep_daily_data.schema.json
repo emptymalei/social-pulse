@@ -1,0 +1,1 @@
+[{"name":"date","evidenceType":"date","typeFidelity":"precise"},{"name":"total_hours","evidenceType":"number","typeFidelity":"precise"},{"name":"year","evidenceType":"number","typeFidelity":"precise"},{"name":"total_hours_7_day_avg","evidenceType":"number","typeFidelity":"precise"}]
