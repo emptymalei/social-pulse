@@ -20,6 +20,7 @@ The follow charts shows my daily sleeping hours.
     value=total_hours
 />
 
+## Deep Dive
 
 <DateRange
     name=sleep_range_filtering_a_query
