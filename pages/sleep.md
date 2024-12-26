@@ -20,12 +20,22 @@ The follow charts shows my daily sleeping hours.
     value=total_hours
 />
 
+<LineChart
+    data={sleep}
+    x=date
+    y=total_hours_7_day_avg
+    yAxisTitle="7 Day Average of Sleeping Hours"
+/>
 
 <Dropdown
     name=selected_sleep_year
     data={sleep}
     value=year
+    defaultValue="2024"
+    title="Select a Year"
 />
+
+
 
 ```sql selected_sleep_year
 select * from health.sleep_daily_data
@@ -39,3 +49,7 @@ Histogram of sleeping hours for <Value data={selected_sleep_year} column="year" 
     x=total_hours
     xAxisTitle="Total Hours",
 />
+
+
+---
+<LastRefreshed prefix="Data last updated"/>

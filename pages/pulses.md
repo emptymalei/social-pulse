@@ -20,6 +20,10 @@ select * from pulses.pulses
     data={pulses_all}
     date=Date
     value=Value
+    colorScale={[
+        ['black']
+    ]}
+    legend=false
 />
 
 ## Social Media Activities
@@ -33,6 +37,10 @@ select * from pulses.social_media
     data={pulses_social}
     date=Date
     value=Value
+    colorScale={[
+        ['rgb(218,66,41)']
+    ]}
+    legend=false
 />
 
 ## Tech Activities
@@ -45,4 +53,12 @@ select * from pulses.tech
     data={pulses_tech}
     date=Date
     value=Value
+    colorScale={[
+        ['rgb(57, 117, 239)']
+    ]}
+    legend=false
 />
+
+
+---
+<LastRefreshed prefix="Data last updated"/>

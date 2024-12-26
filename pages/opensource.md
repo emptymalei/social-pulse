@@ -39,3 +39,7 @@ LIMIT 10
 As of <Value data={github_stats} column="date" agg="max" />, the top 10 repositories by stargazers are:
 
 <DataTable data={github_top_by_date}/>
+
+
+
+<LastRefreshed prefix="Data last updated"/>
