@@ -8,6 +8,7 @@ sidebar_position: 30
 select date, domain, sum(stargazers_count) as stargazers_count,
 sum(watchers_count) as watchers_count
 from opensource.github__stats
+WHERE domain not in ('uupers')
 group by date, domain
 ```
 
@@ -29,7 +30,8 @@ Last update: <Value data={github_stats} column="date" agg="max" />.
 ```sql github_top_by_date
 select full_name, sum(stargazers_count) as stargazers_count
 from opensource.github__stats
-WHERE date = (select max(date) from opensource.github__stats)
+WHERE (date = (select max(date) from opensource.github__stats))
+AND (domain not in ('uupers'))
 group by date, full_name
 ORDER BY
     stargazers_count DESC
