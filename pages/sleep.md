@@ -20,37 +20,42 @@ The follow charts shows my daily sleeping hours.
     value=total_hours
 />
 
-## Deep Dive
+## Deep Dive by Year
 
-<DateRange
-    name=sleep_range_filtering_a_query
+<Dropdown
+    name=selected_sleep_year
     data={sleep}
-    dates=date
-    defaultValue={'Last 12 Months'}
+    value=year
+    title="Select a Year"
+    defaultValue="2024"
 />
 
-```sql filtered_sleep
-select
-    date, total_hours_7_day_avg
-from health.sleep_daily_data
-where date between '${inputs.sleep_range_filtering_a_query.start}' and '${inputs.sleep_range_filtering_a_query.end}'
+```sql selected_sleep_year
+select date, year, total_hours, total_hours_7_day_avg from health.sleep_daily_data
+where year = '${inputs.selected_sleep_year.value}'
 ```
 
+Moving average of sleeping hours for <Value data={selected_sleep_year} column="year" agg="max" />:
+
 <LineChart
-    data={filtered_sleep}
+    data={selected_sleep_year}
     x=date
     y=total_hours_7_day_avg
     yAxisTitle="7 Day Average of Sleeping Hours"
+    downloadableData=false
 >
     <ReferenceLine y=7 label="7 Hours" hideValue labelPosition="aboveStart" color=positive/>
 </LineChart>
 
-Histogram of sleeping hours for the above selected date range.
+
+Histogram of sleeping hours for <Value data={selected_sleep_year} column="year" agg="max" />:
+
 
 <Histogram
-    data={filtered_sleep}
-    x=total_hours_7_day_avg
-    xAxisTitle="Total Hours",
+    data={selected_sleep_year}
+    x=total_hours
+    xAxisTitle="Total Hours"
+    downloadableData=false
 />
 
 

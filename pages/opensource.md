@@ -22,6 +22,7 @@ Last update: <Value data={github_stats} column="date" agg="max" />.
     y=stargazers_count
     series=domain
     title="Stargazers"
+    downloadableData=false
 />
 
 
@@ -43,5 +44,5 @@ As of <Value data={github_stats} column="date" agg="max" />, the top 10 reposito
 <DataTable data={github_top_by_date}/>
 
 
-
+---
 <LastRefreshed prefix="Data last updated"/>
