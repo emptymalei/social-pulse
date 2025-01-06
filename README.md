@@ -3,7 +3,7 @@
 Automated collection of social activities using GitHub Actions.
 
 [Demo](https://pulse.leima.is/)
-![](assets/demo.png)
+![](assets/social_pulse_demo.jpg)
 
 ## How it works?
 
