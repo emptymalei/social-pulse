@@ -58,9 +58,17 @@
   {
     "date": "2025-05-09",
     "full_name": "emptymalei/awesome-research",
-    "stargazers_count": 2300,
-    "watchers_count": 2300,
+    "stargazers_count": 2301,
+    "watchers_count": 2301,
     "forks_count": 243,
+    "domain": "emptymalei"
+  },
+  {
+    "date": "2025-05-09",
+    "full_name": "emptymalei/baby",
+    "stargazers_count": 0,
+    "watchers_count": 0,
+    "forks_count": 0,
     "domain": "emptymalei"
   },
   {
@@ -228,14 +236,6 @@
     "full_name": "emptymalei/data-presentation",
     "stargazers_count": 1,
     "watchers_count": 1,
-    "forks_count": 0,
-    "domain": "emptymalei"
-  },
-  {
-    "date": "2025-05-09",
-    "full_name": "emptymalei/dc-maps",
-    "stargazers_count": 0,
-    "watchers_count": 0,
     "forks_count": 0,
     "domain": "emptymalei"
   },
