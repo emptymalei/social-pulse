@@ -26,8 +26,10 @@ The follow charts shows my daily sleeping hours.
     name=selected_sleep_year
     data={sleep}
     value=year
+    label=year
     title="Select a Year"
     defaultValue="2024"
+    order="year desc"
 />
 
 ```sql selected_sleep_year
