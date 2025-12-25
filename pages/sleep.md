@@ -28,7 +28,7 @@ The follow charts shows my daily sleeping hours.
     value=year
     label=year
     title="Select Year(s) to Compare"
-    defaultValue="2025"
+    defaultValue={["2024", "2025"]}
     order="year desc"
     multiple=true
 />
