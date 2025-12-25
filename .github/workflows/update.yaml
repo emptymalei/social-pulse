@@ -51,7 +51,9 @@ jobs:
           git push
       - name: Move Data
         run: |
-          sh move_data.sh
+          # sh move_data.sh
+          cp dashboard/data/*.csv sources/pulses/
+          cp dashboard/data/github/*.csv sources/opensource/
           git add .
           git commit -m "Update evidence data sources" || echo "Nothing to update"
           git config pull.rebase true

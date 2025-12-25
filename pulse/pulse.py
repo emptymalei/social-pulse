@@ -147,6 +147,7 @@ class Pulse:
     def run(self):
 
         self.merge_pulses(self.get_existing_pulses(), self.get_new_pulses())
+        logger.info("saving results...")
         self.save()
 
 
