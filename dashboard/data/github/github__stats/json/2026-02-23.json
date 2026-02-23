@@ -58,8 +58,8 @@
   {
     "date": "2026-02-23",
     "full_name": "emptymalei/awesome-research",
-    "stargazers_count": 2517,
-    "watchers_count": 2517,
+    "stargazers_count": 2518,
+    "watchers_count": 2518,
     "forks_count": 250,
     "domain": "emptymalei"
   },
@@ -1578,6 +1578,14 @@
   {
     "date": "2026-02-23",
     "full_name": "spikinglabs/LibreChat",
+    "stargazers_count": 0,
+    "watchers_count": 0,
+    "forks_count": 0,
+    "domain": "spikinglabs"
+  },
+  {
+    "date": "2026-02-23",
+    "full_name": "spikinglabs/recall-tracker",
     "stargazers_count": 0,
     "watchers_count": 0,
     "forks_count": 0,
