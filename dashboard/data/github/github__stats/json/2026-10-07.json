@@ -66,8 +66,8 @@
   {
     "date": "2026-10-07",
     "full_name": "emptymalei/awesome-research",
-    "stargazers_count": 2786,
-    "watchers_count": 2786,
+    "stargazers_count": 2788,
+    "watchers_count": 2788,
     "forks_count": 274,
     "domain": "emptymalei"
   },
@@ -1314,6 +1314,14 @@
   {
     "date": "2026-10-07",
     "full_name": "DataHerb/dataset-samsung-device-updates",
+    "stargazers_count": 0,
+    "watchers_count": 0,
+    "forks_count": 0,
+    "domain": "DataHerb"
+  },
+  {
+    "date": "2026-10-07",
+    "full_name": "DataHerb/dataherb-explorer",
     "stargazers_count": 0,
     "watchers_count": 0,
     "forks_count": 0,
