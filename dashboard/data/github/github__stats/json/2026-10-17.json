@@ -1428,7 +1428,7 @@
     "full_name": "kausalflow/tools",
     "stargazers_count": 48,
     "watchers_count": 48,
-    "forks_count": 7,
+    "forks_count": 8,
     "domain": "kausalflow"
   },
   {
@@ -1618,8 +1618,8 @@
   {
     "date": "2026-10-17",
     "full_name": "spikinglabs/rondel",
-    "stargazers_count": 0,
-    "watchers_count": 0,
+    "stargazers_count": 1,
+    "watchers_count": 1,
     "forks_count": 0,
     "domain": "spikinglabs"
   }
