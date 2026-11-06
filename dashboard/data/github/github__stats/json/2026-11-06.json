@@ -66,8 +66,8 @@
   {
     "date": "2026-11-06",
     "full_name": "emptymalei/awesome-research",
-    "stargazers_count": 2810,
-    "watchers_count": 2810,
+    "stargazers_count": 2811,
+    "watchers_count": 2811,
     "forks_count": 285,
     "domain": "emptymalei"
   },
@@ -850,8 +850,8 @@
   {
     "date": "2026-11-06",
     "full_name": "uupers/BiliSpider",
-    "stargazers_count": 467,
-    "watchers_count": 467,
+    "stargazers_count": 465,
+    "watchers_count": 465,
     "forks_count": 73,
     "domain": "uupers"
   },
@@ -1650,6 +1650,14 @@
   {
     "date": "2026-11-06",
     "full_name": "spikinglabs/aura-renno",
+    "stargazers_count": 0,
+    "watchers_count": 0,
+    "forks_count": 0,
+    "domain": "spikinglabs"
+  },
+  {
+    "date": "2026-11-06",
+    "full_name": "spikinglabs/cars",
     "stargazers_count": 0,
     "watchers_count": 0,
     "forks_count": 0,
